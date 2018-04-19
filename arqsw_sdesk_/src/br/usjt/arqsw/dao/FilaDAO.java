@@ -8,9 +8,10 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 
 import br.usjt.arqsw.entity.Fila;
+
 /**
  * 
- *  @author Lucas Ribeiro Rios 816114323 (SIN3AN-MCA1)
+ * @author 816114323 - Lucas Ribeiro Rios SIN3AN-MCA1
  */
 
 

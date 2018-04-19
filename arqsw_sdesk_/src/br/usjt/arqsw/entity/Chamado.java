@@ -13,10 +13,9 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 /**
  * 
- *  @author Lucas Ribeiro Rios 816114323 (SIN3AN-MCA1)
+ * @author 816114323 - Lucas Ribeiro Rios SIN3AN-MCA1
  */
 
 
@@ -26,12 +25,6 @@ public class Chamado implements Serializable {
 	
 	
 	private static final long serialVersionUID = 1L;
-
-
-	public static final String ABERTO = null;
-
-
-	public static final String FECHADO = null;
 	
 	
 	@Column(name="id_chamado")
@@ -46,13 +39,9 @@ public class Chamado implements Serializable {
 	@NotNull
 	@Column
 	private String status;
-	
-	@JsonFormat(pattern="dd-MM-YY")
 	@NotNull
 	@Column
 	private Date dt_abertura;
-	
-	@JsonFormat(pattern="dd-MM-YY")
 	@Column
 	private Date dt_fechamento;
 	@NotNull

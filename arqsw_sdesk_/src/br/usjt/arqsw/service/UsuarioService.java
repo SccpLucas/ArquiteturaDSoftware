@@ -7,9 +7,10 @@ import org.springframework.stereotype.Service;
 
 import br.usjt.arqsw.dao.UsuarioDAO;
 import br.usjt.arqsw.entity.Usuario;
+
 /**
  * 
- *  @author Lucas Ribeiro Rios 816114323 (SIN3AN-MCA1)
+ * @author 816114323 - Lucas Ribeiro Rios SIN3AN-MCA1
  */
 
 

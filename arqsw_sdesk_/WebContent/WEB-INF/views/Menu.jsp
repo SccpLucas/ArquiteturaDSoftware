@@ -1,3 +1,5 @@
+ 
+
  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -15,8 +17,6 @@
                     <li><a href="listar_filas_exibir">Consultar Chamados</a>
                     </li>
                     <li><a href="cadastrar_chamado">Cadastrar chamado</a>
-                    </li>
-                    <li><a href="fechar_chamado">Fechar chamado</a>
                     </li>
                 </ul>
             </div>

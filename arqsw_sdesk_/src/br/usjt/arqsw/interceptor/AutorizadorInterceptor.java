@@ -7,8 +7,9 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 /**
  * 
- *  @author Lucas Ribeiro Rios 816114323 (SIN3AN-MCA1)
+ * @author 816114323 - Lucas Ribeiro Rios SIN3AN-MCA1
  */
+
 public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object controller)
@@ -16,7 +17,7 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 		
         String uri = request.getRequestURI();
 		if (uri.endsWith("loginForm") || uri.contains("css") || uri.contains("js")
-				|| uri.contains("img") || uri.contains("index") || uri.contains("tela_principal") || uri.contains("rest/chamados")) {
+				|| uri.contains("img") ||  uri.contains("index") || uri.contains("tela_principal")) {
 			return true;
 		}
 		if (request.getSession().getAttribute("UsuarioLogado") != null) {

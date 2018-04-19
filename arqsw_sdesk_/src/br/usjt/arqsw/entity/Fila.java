@@ -10,10 +10,12 @@ import javax.persistence.Table;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
 /**
  * 
- * @author Lucas Ribeiro Rios 816114323 (SIN3AN-MCA1)
+ * @author 816114323 - Lucas Ribeiro Rios SIN3AN-MCA1
  */
+
 @Entity
 @Table
 public class Fila implements Serializable{

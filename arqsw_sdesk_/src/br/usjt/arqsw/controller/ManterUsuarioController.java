@@ -14,7 +14,7 @@ import br.usjt.arqsw.service.UsuarioService;
 
 /**
  * 
- *  @author Lucas Ribeiro Rios 816114323 (SIN3AN-MCA1)
+ * @author 816114323 - Lucas Ribeiro Rios SIN3AN-MCA1
  */
 
 @Controller

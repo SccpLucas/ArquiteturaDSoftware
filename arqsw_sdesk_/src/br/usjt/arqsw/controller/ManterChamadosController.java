@@ -17,7 +17,7 @@ import br.usjt.arqsw.service.FilaService;
 
 /**
  * 
- *  @author Lucas Ribeiro Rios 816114323 (SIN3AN-MCA1)
+ * @author 816114323 - Lucas Ribeiro Rios SIN3AN-MCA1
  */
 
 @Controller
@@ -51,8 +51,8 @@ public class ManterChamadosController {
 	
 	
 	@Transactional
-	private List<Chamado> listarChamados() throws IOException{
-		return chamadoService.listarChamados();
+	private List<Chamado> listarChamados(Fila fila) throws IOException{
+		return chamadoService.listarChamados(fila);
 	}
 	
 	
@@ -64,8 +64,9 @@ public class ManterChamadosController {
 		chamado.setFila(fila);
 		chamado.setStatus("ABERTO");
 		chamado.setDt_abertura(d);
-		chamadoService.novoChamado(chamado);
+		chamadoService.cadastrarChamado(chamado);
 	}
+	
 	
 	
 	@Transactional
@@ -81,6 +82,7 @@ public class ManterChamadosController {
 	}
 	
 	
+	
 	@Transactional
 	@RequestMapping("/cadastrar_chamado")
 	public String cadastrarChamado(Model model) {
@@ -92,6 +94,7 @@ public class ManterChamadosController {
 			return "Erro";
 		}
 	}
+	
 	
 	 
 	@Transactional
@@ -107,6 +110,7 @@ public class ManterChamadosController {
 	}
 	
 	
+	
 	@Transactional
 	@RequestMapping("/listar_chamados_exibir")
 	public String listarChamadosExibir(@Valid Fila fila, BindingResult result, Model model) {
@@ -118,7 +122,7 @@ public class ManterChamadosController {
 				//return "redirect:listar_filas_exibir";
 			}
 			fila = filaService.carregar(fila.getId());
-			model.addAttribute("chamados", listarChamados());
+			model.addAttribute("chamados", listarChamados(fila));
 			
 			return "ChamadoListarExibir";
 
@@ -127,28 +131,5 @@ public class ManterChamadosController {
 			return "Erro";
 		}
 	}
-	
-	@Transactional
-	@RequestMapping("/fechar_chamado")
-	public String fecharChamado(Model model) {
-		try {
-			model.addAttribute("filas", listarFilas());
-			return "FecharChamado";
-		} catch (IOException e) {
-			e.printStackTrace();
-			return "Erro";
-		}
-	}
-	
-	@Transactional
-	@RequestMapping("/chamado_fechado")
-	public String chamadoFechado(String desc, Fila fila) {
-		try {
-			cadastrarChamado(desc, fila);
-			return "ChamadoFechado";		
-		} catch (IOException e) {
-			e.printStackTrace();
-			return "Erro";
-		}
-	}
+
 }
